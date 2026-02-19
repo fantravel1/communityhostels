@@ -40,6 +40,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
+    <!-- Leaflet.js Map Library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -216,8 +219,67 @@
         ]
     }
     </script>
+    <!-- Schema.org: HowTo for Getting Started -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Find and Book a Community Hostel",
+        "description": "A quick 5-step guide to finding and booking your first community hostel experience on CommunityHostels.",
+        "totalTime": "PT5M",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Choose Your City",
+                "text": "Browse our 21 featured cities and use the search to find the right destination. Read neighborhood guides to understand the vibe."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Check the Scores",
+                "text": "Look at each hostel\u2019s Culture, Community, Safety, Inclusion, and Local Ownership scores. No hidden rankings \u2014 complete transparency."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Read Stories",
+                "text": "See what other travelers experienced. Check verified reviews and traveler testimonials about community rituals and local connections."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Check the Rituals",
+                "text": "Look at the weekly cultural programming. Will you cook with locals? Join language exchanges? Attend maker workshops?"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Book Direct",
+                "text": "Most community hostels prefer direct bookings to keep revenue local. Send an email or message \u2014 many offer first-time traveler discounts."
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://communityhostels.com/"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
 
     <!-- ===================== NAVIGATION ===================== -->
     <header class="site-header" id="site-header">
@@ -227,14 +289,15 @@
                 <span class="logo-text">Community<strong>Hostels</strong></span>
             </a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="coming-soon.html">Cities</a></li>
-                <li><a href="coming-soon.html">Experiences</a></li>
-                <li><a href="coming-soon.html">Collections</a></li>
-                <li><a href="coming-soon.html">Stories</a></li>
-                <li><a href="coming-soon.html">About</a></li>
+                <li><a href="#cities-heading">Cities</a></li>
+                <li><a href="#rituals-heading">Experiences</a></li>
+                <li><a href="#collections-heading">Collections</a></li>
+                <li><a href="#stories-heading">Stories</a></li>
+                <li><a href="#explore-map">Map</a></li>
+                <li><a href="#faq-heading">FAQ</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="coming-soon.html" class="nav-cta">Explore Hostels</a>
+                <a href="#featured-hostels-heading" class="nav-cta">Explore Hostels</a>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -245,17 +308,18 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <ul class="mobile-menu-links">
-                <li><a href="coming-soon.html">Cities</a></li>
-                <li><a href="coming-soon.html">Experiences</a></li>
-                <li><a href="coming-soon.html">Collections</a></li>
-                <li><a href="coming-soon.html">Stories</a></li>
-                <li><a href="coming-soon.html">About</a></li>
-                <li><a href="coming-soon.html" class="mobile-cta">Explore Hostels</a></li>
+                <li><a href="#cities-heading">Cities</a></li>
+                <li><a href="#rituals-heading">Experiences</a></li>
+                <li><a href="#collections-heading">Collections</a></li>
+                <li><a href="#stories-heading">Stories</a></li>
+                <li><a href="#explore-map">Map</a></li>
+                <li><a href="#faq-heading">FAQ</a></li>
+                <li><a href="#featured-hostels-heading" class="mobile-cta">Explore Hostels</a></li>
             </ul>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- ===================== HERO SECTION ===================== -->
         <section class="hero" aria-labelledby="hero-heading">
             <div class="hero-bg">
@@ -280,7 +344,7 @@
                     Not just a bed — a gateway into neighborhoods, rituals, and belonging.
                 </p>
                 <div class="hero-actions animate-fade-up delay-3">
-                    <a href="coming-soon.html" class="btn btn-primary btn-lg">Discover Community Hostels</a>
+                    <a href="#featured-hostels-heading" class="btn btn-primary btn-lg">Discover Community Hostels</a>
                     <a href="#how-it-works" class="btn btn-ghost btn-lg">How It Works</a>
                 </div>
                 <div class="hero-stats animate-fade-up delay-4">
@@ -649,7 +713,8 @@
                 </div>
 
                 <div class="section-cta">
-                    <a href="coming-soon.html" class="btn btn-primary">View All Cities</a>
+                    <a href="#explore-map" class="btn btn-primary">View All Cities</a>
+                    <a href="#neighborhoods-heading" class="btn btn-ghost">Or Explore by Neighborhood →</a>
                 </div>
             </div>
         </section>
@@ -738,7 +803,8 @@
                 </div>
 
                 <div class="section-cta">
-                    <a href="coming-soon.html" class="btn btn-primary">Explore All Neighborhoods</a>
+                    <a href="#explore-map" class="btn btn-primary">Explore All Neighborhoods</a>
+                    <a href="#rituals-heading" class="btn btn-ghost">Discover Community Rituals →</a>
                 </div>
             </div>
         </section>
@@ -1146,6 +1212,2136 @@
             </div>
         </section>
 
+        <!-- ===================== GETTING STARTED ===================== -->
+        <section class="getting-started" aria-labelledby="getting-started-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Plan Your Stay</span>
+                    <h2 id="getting-started-heading" class="section-title">Getting Started<br><span class="text-accent">In 5 Minutes</span></h2>
+                    <p class="section-subtitle">A quick guide to finding and booking your first community hostel experience.</p>
+                </div>
+
+                <div class="getting-started-cards">
+                    <div class="getting-started-card reveal">
+                        <div class="card-number">1</div>
+                        <h3>Choose Your City</h3>
+                        <p>Browse our 21 featured cities and use the search to find the right destination. Read neighborhood guides to understand the vibe.</p>
+                    </div>
+
+                    <div class="getting-started-card reveal">
+                        <div class="card-number">2</div>
+                        <h3>Check the Scores</h3>
+                        <p>Look at each hostel's Culture, Community, Safety, Inclusion, and Local Ownership scores. No hidden rankings — complete transparency.</p>
+                    </div>
+
+                    <div class="getting-started-card reveal">
+                        <div class="card-number">3</div>
+                        <h3>Read Stories</h3>
+                        <p>See what other travelers experienced. Check verified reviews and traveler testimonials about community rituals and local connections.</p>
+                    </div>
+
+                    <div class="getting-started-card reveal">
+                        <div class="card-number">4</div>
+                        <h3>Check the Rituals</h3>
+                        <p>Look at the weekly cultural programming. Will you cook with locals? Join language exchanges? Attend maker workshops?</p>
+                    </div>
+
+                    <div class="getting-started-card reveal">
+                        <div class="card-number">5</div>
+                        <h3>Book Direct</h3>
+                        <p>Most community hostels prefer direct bookings to keep revenue local. Send an email or message — many offer first-time traveler discounts.</p>
+                    </div>
+                </div>
+
+                <div class="section-cta">
+                    <a href="#featured-hostels-heading" class="btn btn-primary btn-lg">Start Exploring Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== FEATURED HOSTELS ===================== -->
+        <section class="featured-hostels" aria-labelledby="featured-hostels-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Hostel Examples</span>
+                    <h2 id="featured-hostels-heading" class="section-title">Meet Our<br><span class="text-accent">Featured Community Hostels</span></h2>
+                    <p class="section-subtitle">Examples of what community hostels on our platform look like. Each tells a story of local ownership, cultural programming, and real belonging.</p>
+                </div>
+
+                <div class="hostels-search-bar">
+                    <input type="search"
+                           id="hostel-search"
+                           class="hostel-search-input"
+                           placeholder="Search hostels by name, city, or vibe..."
+                           aria-label="Search featured hostels">
+                </div>
+
+                <div class="hostels-filter-bar">
+                    <div class="filter-group">
+                        <label for="hostel-vibe-filter">Filter by vibe:</label>
+                        <select id="hostel-vibe-filter" class="filter-select" aria-label="Filter hostels by vibe">
+                            <option value="">All Vibes</option>
+                            <option value="social">Social & Community</option>
+                            <option value="quiet">Quiet & Mindful</option>
+                            <option value="creative">Creative & Artistic</option>
+                            <option value="educational">Educational & Learning</option>
+                            <option value="sustainable">Eco & Sustainable</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="hostels-grid" id="hostels-grid">
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop&q=80"
+                                 alt="Colorful rooftop terrace with string lights of Casa Amiga hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Casa Amiga</h3>
+                            <p class="hostel-location">Roma, Mexico City</p>
+                            <p class="hostel-description">Bohemian hostel with rooftop art gallery, Sunday cooking classes with local chefs, and direct partnerships with neighborhood artists.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">89</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Safety</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Artsy</span>
+                                <span class="tag">Cultural</span>
+                                <span class="tag">Social</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(385 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Sofia R.:</strong> "Loved the rooftop gallery and Sunday cooking classes with local chefs! Real community vibe."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Lucas B.:</strong> "The artist partnerships are genuine. You meet locals naturally through the creative programming."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Maria G.:</strong> "Beautiful bohemian atmosphere. The neighborhood walking tours with residents are excellent."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Ahmed H.:</strong> "Safe, welcoming, and deeply connected to Roma's art scene. Staff are all locals."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Casa Amiga" data-city="Mexico City">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1559394776-4714b2e7fc2a?w=600&h=400&fit=crop&q=80"
+                                 alt="Intimate tea ceremony space in a heritage hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Tea & Silk Lodge</h3>
+                            <p class="hostel-location">Chiang Mai, Thailand</p>
+                            <p class="hostel-description">Small heritage property with daily tea ceremonies, textile workshops with local weavers, and quiet spaces for reflection and learning.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">97</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Inclusion</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Quiet Space</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Spiritual</span>
+                                <span class="tag">Quiet</span>
+                                <span class="tag">Artisan</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.9</span>
+                                        <span class="review-count">(367 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Pim N.:</strong> "Textile workshops preserve traditional Lanna weaving. Staff teachers are family artisans."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Somchai R.:</strong> "Quiet, meditative atmosphere. Tea ceremonies create genuine mindfulness space."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Niran T.:</strong> "Small group sizes mean real cultural exchange, not performance."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Siriporn S.:</strong> "Respect for Buddhist practices evident in every detail of daily routines."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Tea & Silk Lodge" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80"
+                                 alt="Communal kitchen and dining space at Mesa Hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Mesa Hostel</h3>
+                            <p class="hostel-location">Lisbon, Portugal</p>
+                            <p class="hostel-description">Community kitchen hub with Tuesday fado nights featuring local musicians, neighborhood cooking workshops, and connections to local guides.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Inclusion</span>
+                                    <span class="score-value">88</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Music</span>
+                                <span class="tag">Food</span>
+                                <span class="tag">Social</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(342 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Miguel C.:</strong> "Tuesday fado nights with local musicians are authentic and moving."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Lily K.:</strong> "Community kitchen hub creates natural connections with other travelers and locals."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Hassan A.:</strong> "Neighborhood cooking workshops teach Lisbon's culinary secrets."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Elodie M.:</strong> "Welcoming atmosphere. The staff know every local artist and musician."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Mesa Hostel" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+                                 alt="Eco-friendly garden space with sustainable architecture"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Tierra Verde</h3>
+                            <p class="hostel-location">Medellín, Colombia</p>
+                            <p class="hostel-description">Eco-community hostel with permaculture gardens, sustainability workshops, and deep connections to neighborhood environmental initiatives.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Sustainability</span>
+                                    <span class="score-value">98</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">90</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Safety</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Eco</span>
+                                <span class="tag">Educational</span>
+                                <span class="tag">Community</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(356 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Catalina G.:</strong> "Permaculture gardens teach sustainable living practices while you stay."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Juan C.:</strong> "Eco-workshops genuinely connect you to Medellín's green initiatives."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Maria E.:</strong> "Community projects and gardens improve neighborhood lives, not just tourism."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Roberto M.:</strong> "Staff passion for sustainability is evident in every daily operation."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Tierra Verde" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop&q=80"
+                                 alt="Creative space for artists and makers at Taller Hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Taller Hostel</h3>
+                            <p class="hostel-location">Oaxaca, Mexico</p>
+                            <p class="hostel-description">Artist-run hostel with live art workshops, textile studio access, and daily gatherings featuring local musicians and craftspeople.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Local Ownership</span>
+                                    <span class="score-value">97</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">87</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Art</span>
+                                <span class="tag">Craft</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(298 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Diego L.:</strong> "Maker workshops with local artisans teach real crafts, not tourist performances."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Emma W.:</strong> "The 'taller' (workshop) spirit is genuine—you're learning from masters."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Pablo C.:</strong> "Support for local makers is visible in every partnership and event."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Ana S.:</strong> "Language exchange sessions happen naturally through creative workshops."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Taller Hostel" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1596178065887-cf38d2c9a4b1?w=600&h=400&fit=crop&q=80"
+                                 alt="Rooftop gathering space with city views at Urban Belongs"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Urban Belongs</h3>
+                            <p class="hostel-location">Cape Town, South Africa</p>
+                            <p class="hostel-description">Community-run social enterprise with rooftop events, skill-sharing circles, and partnerships with local social organizations.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Safety</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Inclusion</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Social Impact</span>
+                                <span class="tag">Inclusive</span>
+                                <span class="tag">Social</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.6</span>
+                                        <span class="review-count">(287 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Marcus T.:</strong> "This hostel truly lives up to 'belongs'—you feel part of the neighborhood."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Claire B.:</strong> "Urban walking tours with residents reveal authentic city culture."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>James K.:</strong> "Street food tours connect you with neighborhood food culture directly."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Yuki S.:</strong> "Staff create meaningful connections between travelers and local community."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Urban Belongs" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop&q=80"
+                                 alt="Historic rooftop terrace with views in Istanbul hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Bosphorus Stories</h3>
+                            <p class="hostel-location">Istanbul, Turkey</p>
+                            <p class="hostel-description">Rooftop hostel bridging East and West with Turkish tea ceremonies, calling-to-prayer observation, and guided tours through bazaars.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Safety</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Spiritual</span>
+                                <span class="tag">Historic</span>
+                                <span class="tag">Social</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(347 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Sarah M.:</strong> "Amazing rooftop views! The tea ceremonies were so authentic and welcoming."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Marco T.:</strong> "Perfect blend of comfort and cultural immersion. Bazaar tours are exceptional."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Chen L.:</strong> "Great location for exploring historic districts. Strong community vibe."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Fatima K.:</strong> "Respectful approach to local culture. Calling-to-prayer sessions were profound."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Bosphorus Stories" data-city="Istanbul">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop&q=80"
+                                 alt="Colorful colonial architecture and courtyard in Granada hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Casa del Albaicín</h3>
+                            <p class="hostel-location">Granada, Spain</p>
+                            <p class="hostel-description">Moorish-influenced hostel with flamenco nights, cooking classes featuring local recipes, and deep connections to the historic neighborhood.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Food</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Inclusion</span>
+                                    <span class="score-value">89</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Music</span>
+                                <span class="tag">Food</span>
+                                <span class="tag">Historic</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(334 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Antonio G.:</strong> "Flamenco sessions with neighborhood dancers are passionate and authentic."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Isabel M.:</strong> "Tapas tours through historic quarters reveal stories locals share."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Juan P.:</strong> "Islamic heritage respected while sharing broader historical context."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>María C.:</strong> "Truly integrated into Granada's educational and cultural community."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Casa del Albaicín" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&q=80"
+                                 alt="Beachfront community space at Zanzibar hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Spice Island Collective</h3>
+                            <p class="hostel-location">Zanzibar, Tanzania</p>
+                            <p class="hostel-description">Beachfront social enterprise supporting local artisans, hosting spice market tours and traditional Swahili cooking workshops daily.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Social Impact</span>
+                                    <span class="score-value">97</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Beach</span>
+                                <span class="tag">Food</span>
+                                <span class="tag">Social Impact</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(315 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Yasmin B.:</strong> "Spice market walks with vendor friends reveal hidden neighborhood treasures."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Karim M.:</strong> "Rooftop evenings with call to prayer and Moroccan tea—unforgettable magic."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Amir H.:</strong> "Berber culture presented respectfully with genuine profit-sharing partnerships."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Samira F.:</strong> "Women travelers feel especially safe and celebrated here."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Spice Island Collective" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop&q=80"
+                                 alt="Buenos Aires tango lounge at hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Milonga Casa</h3>
+                            <p class="hostel-location">Buenos Aires, Argentina</p>
+                            <p class="hostel-description">Tango-focused hostel with weekly milongas (dance halls), tango lessons from professional dancers, and literary café nights featuring local poets.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">98</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Social</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Dance</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Cultural</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.9</span>
+                                        <span class="review-count">(389 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Martina G.:</strong> "Tango lessons teach cultural history through authentic movement and passion."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Diego F.:</strong> "Neighborhood walking tours with residents share real Tango origins."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Sofia L.:</strong> "Milonga connections introduce you to living, dancing community culture."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Carlos R.:</strong> "Mate and choripán traditions shared naturally over late-night conversations."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Milonga Casa" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80"
+                                 alt="Temple terrace learning space at Siem Reap hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Angkor Spirit Home</h3>
+                            <p class="hostel-location">Siem Reap, Cambodia</p>
+                            <p class="hostel-description">Ancient-temple-adjacent hostel offering Khmer language exchanges, sustainable tour partnerships, and skill-sharing circles with local guides.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Education</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">88</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Spiritual</span>
+                                <span class="tag">Educational</span>
+                                <span class="tag">Sustainable</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(321 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Sokha K.:</strong> "Temple volunteering opportunities provide genuine spiritual and service connection."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Narith S.:</strong> "Respectful Buddhist practice integration creates peaceful atmosphere."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Samoeun M.:</strong> "Monk exchanges are meditative and deeply respectful of traditions."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Sophea V.:</strong> "Community partnerships support local education and family livelihoods."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Angkor Spirit Home" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1566525885779-176a50487663?w=600&h=400&fit=crop&q=80"
+                                 alt="Rooftop gathering space at Tokyo traditional hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Matcha & Moon</h3>
+                            <p class="hostel-location">Tokyo, Japan</p>
+                            <p class="hostel-description">Zen-inspired hostel blending traditional and modern with tea ceremonies, calligraphy workshops, and neighborhood izakaya nights with locals.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Quiet Space</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">89</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Zen</span>
+                                <span class="tag">Cultural</span>
+                                <span class="tag">Quiet</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(367 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Yuki M.:</strong> "Matcha ceremony workshops with tea masters teach Zen traditions."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Takeshi O.:</strong> "Theater district connections link you to Tokyo's indie creative scene."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Hana K.:</strong> "Respectful of local community despite being in tourist area—no loud parties."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Kenji S.:</strong> "You understand Tokyo's creative resistance to commercialization here."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Matcha & Moon" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1535526066377-b5196e209d9d?w=600&h=400&fit=crop&q=80"
+                                 alt="Creative workspace at Bangkok digital nomad hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Backstreet Beats</h3>
+                            <p class="hostel-location">Bangkok, Thailand</p>
+                            <p class="hostel-description">Hip co-working hostel connecting digital nomads with local music scene, street food tours, and collaboration spaces with Thai creatives.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Digital</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">88</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Nomad</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.6</span>
+                                        <span class="review-count">(293 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Linh N.:</strong> "Early morning egg coffee ritual with local vendors on the lake is special."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Duc V.:</strong> "Street art tours with Hanoi's emerging artists show city's identity."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Thu M.:</strong> "Cyclo tours with neighborhood guides who actually grew up here."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Anh T.:</strong> "Water puppet workshops with families running traditional theater."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Backstreet Beats" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+                                 alt="Mountain valley views at Cusco cultural hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Pachamama Lodge</h3>
+                            <p class="hostel-location">Cusco, Peru</p>
+                            <p class="hostel-description">Indigenous-community-partnered hostel offering Quechua language learning, mountain rituals, and direct support for Andean weaving collectives.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Cultural Respect</span>
+                                    <span class="score-value">99</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Safety</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Indigenous</span>
+                                <span class="tag">Spiritual</span>
+                                <span class="tag">Fair Trade</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(312 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>James T.:</strong> "Incredible valley views and authentic Quechua cultural connections."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Nina S.:</strong> "Mountain location provides perspective. Staff from surrounding communities."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Kwame E.:</strong> "Rooftop sunrises over the valley are stunning beyond words."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Priya M.:</strong> "Sacred site location handled with deep respect and thoughtfulness."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Pachamama Lodge" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop&q=80"
+                                 alt="Lisbon neighborhood street art at Casa Lusitânia"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Casa Lusitânia</h3>
+                            <p class="hostel-location">Lisbon, Portugal</p>
+                            <p class="hostel-description">Artist collective hostel with street art tours, vintage market explorations, and direct connections to Lisbon's underground music and design scene.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">90</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Art Scene</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Art</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(356 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Miguel C.:</strong> "Portuguese tile workshops with local artisans are beautiful and intimate."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Lily K.:</strong> "Neighborhood location with fantastic natural integration of travelers and locals."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Hassan A.:</strong> "Food tours reveal hidden gems and neighborhood culinary traditions."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Elodie M.:</strong> "Welcoming to all guests. LGBTQ+ friendly with great events calendar."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Casa Lusitânia" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&h=400&fit=crop&q=80"
+                                 alt="Community learning space at Nairobi hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Ubuntu House</h3>
+                            <p class="hostel-location">Nairobi, Kenya</p>
+                            <p class="hostel-description">Social enterprise hostel supporting local youth through tech workshops, mentoring circles, and partnerships with neighborhood organizations.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Social Impact</span>
+                                    <span class="score-value">97</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Education</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Social Enterprise</span>
+                                <span class="tag">Educational</span>
+                                <span class="tag">Community</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(334 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Thabo M.:</strong> "Township history tours with local guides provide essential context and respect."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Zola N.:</strong> "Community dinners celebrate South African diversity and shared humanity."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Nelson S.:</strong> "Authentic connections through soccer games and community projects."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Grace T.:</strong> "Shows how tourism can support empowerment, not exploitation."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Ubuntu House" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop&q=80"
+                                 alt="Barcelona rooftop with Gaudí architecture views"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Modernista Collective</h3>
+                            <p class="hostel-location">Barcelona, Spain</p>
+                            <p class="hostel-description">Design-focused hostel celebrating Catalan architecture, hosting design talks, design studio partnerships, and neighborhood modernisme tours.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Design Culture</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">89</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Design</span>
+                                <span class="tag">Architecture</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(378 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Anna V.:</strong> "Sunday street market tours with vendor friends—authentic Barcelona."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Nacho S.:</strong> "Catalan language exchange is fun and genuinely useful for travelers."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Yuki H.:</strong> "Neighborhood collaborations feel real—not generic partnerships."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Carla B.:</strong> "Social activities without party atmosphere. Perfect balance."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Modernista Collective" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop&q=80"
+                                 alt="Eco-garden and sustainable learning space"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Cairo Conversations</h3>
+                            <p class="hostel-location">Cairo, Egypt</p>
+                            <p class="hostel-description">Heritage-focused hostel bridging ancient and modern Cairo with language circles, traditional crafts workshops, and neighborhood archaeology tours.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Inclusion</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Heritage</span>
+                                <span class="tag">Educational</span>
+                                <span class="tag">Cultural</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.6</span>
+                                        <span class="review-count">(289 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Fatima E.:</strong> "Khan el-Khalili cooking classes with locals were transformative."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Omar M.:</strong> "Respectful approach to Islamic culture and daily rhythms."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Aisha L.:</strong> "Staff share genuine stories about neighborhood history and culture."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Rami H.:</strong> "Market walks with owner's family connections are unforgettable."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Cairo Conversations" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1504681869696-d977211867ff?w=600&h=400&fit=crop&q=80"
+                                 alt="Prague old town square hostel with historic architecture"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Bohemian Haven</h3>
+                            <p class="hostel-location">Prague, Czech Republic</p>
+                            <p class="hostel-description">Historic brewery district hostel hosting daily beer tastings, traditional Czech cooking classes, and connections to local punk and indie music scenes.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Food</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">87</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Beer</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Food</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(301 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Kamau K.:</strong> "Coffee farm excursions connect you with Kenyan farming traditions."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Amara J.:</strong> "Wildlife conservation partnerships are meaningful, not selfie-focused."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Samuel M.:</strong> "Staff share Nairobi's creative and tech scene with genuine enthusiasm."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Lucy C.:</strong> "Maasai cultural exchanges feel respectful and mutually beneficial."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Bohemian Haven" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1489749798305-4fea3ba63d60?w=600&h=400&fit=crop&q=80"
+                                 alt="Marrakech medina rooftop with tagine cooking"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Riad Saffron</h3>
+                            <p class="hostel-location">Marrakech, Morocco</p>
+                            <p class="hostel-description">Traditional riad hostel offering daily tajine cooking workshops, henna art sessions, and guided medina market explorations with local artisans.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Food</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Inclusion</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Food</span>
+                                <span class="tag">Cultural</span>
+                                <span class="tag">Craft</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(328 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Pranee S.:</strong> "Floating market tours with neighborhood fishmongers at dawn are magical."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Wei L.:</strong> "Thai cooking classes taught by a neighborhood grandmother. Pure authenticity."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Somchai R.:</strong> "Thai language exchange over late-night street food is the best."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Ning P.:</strong> "Community temple visits feel ceremonial and truly respectful."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Riad Saffron" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+                                 alt="Athens neighborhood street art and community space"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Acropoli Social</h3>
+                            <p class="hostel-location">Athens, Greece</p>
+                            <p class="hostel-description">Social enterprise hostel supporting local artists, hosting weekly film screenings, Greek language exchanges, and neighborhood regeneration projects.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Social Impact</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">89</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Social Enterprise</span>
+                                <span class="tag">Art</span>
+                                <span class="tag">Educational</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(369 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Niko P.:</strong> "Ancient history tours with locals add layers of understanding."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Sophia K.:</strong> "Rooftop views with ouzo and Greek music—pure magic."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Dimitri T.:</strong> "Community cooking with neighborhood elders teaches traditions."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Yiannis M.:</strong> "Support for local artists through galleries and cultural events."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Acropoli Social" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=600&h=400&fit=crop&q=80"
+                                 alt="Bali rice terrace view at sustainability-focused hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Ubud Conscious</h3>
+                            <p class="hostel-location">Ubud, Bali, Indonesia</p>
+                            <p class="hostel-description">Eco-conscious hostel with zero-waste practices, daily yoga circles, rice paddy permaculture education, and partnerships with local Balinese communities.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Sustainability</span>
+                                    <span class="score-value">98</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Wellness</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Eco</span>
+                                <span class="tag">Spiritual</span>
+                                <span class="tag">Sustainable</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.9</span>
+                                        <span class="review-count">(384 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Ketut I.:</strong> "Balinese dance and ceremony participation feels sacred, not staged."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Ni Wayan S.:</strong> "Rice terrace walks with farming families show agriculture knowledge."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Komang R.:</strong> "Temple volunteering gives back to hosting villages genuinely."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Sri M.:</strong> "Batik workshops support artisan families directly and fairly."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Ubud Conscious" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&h=400&fit=crop&q=80"
+                                 alt="Mexico City rooftop with street art and community"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Lucha Libre Collective</h3>
+                            <p class="hostel-location">Mexico City, Mexico</p>
+                            <p class="hostel-description">Artist hostel in Roma neighborhood connecting travelers with street muralists, hosting Spanish language intensives, and supporting local creative cooperatives.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Creative</span>
+                                    <span class="score-value">97</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Social Impact</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Art</span>
+                                <span class="tag">Creative</span>
+                                <span class="tag">Cultural</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.6</span>
+                                        <span class="review-count">(302 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Carlos M.:</strong> "Fishing village connection—early morning boat tours with fishermen."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Luz V.:</strong> "Beachfront bohemian vibe with genuine local artist partnerships."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Diego L.:</strong> "Spanish language exchange over ceviche and sunset talks."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Beatriz S.:</strong> "Conservation programs feel meaningful, not performative."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Lucha Libre Collective" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1488747807830-63789f68bb65?w=600&h=400&fit=crop&q=80"
+                                 alt="Seoul hanok traditional house with community garden"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Hanok Heritage</h3>
+                            <p class="hostel-location">Seoul, South Korea</p>
+                            <p class="hostel-description">Traditional hanok-style hostel offering Korean language circles, traditional craft workshops (calligraphy, paper-making), and guided neighborhood heritage walks.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Educational</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">88</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Heritage</span>
+                                <span class="tag">Educational</span>
+                                <span class="tag">Craft</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(341 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Min J.:</strong> "Traditional hanok building stays connect you to architectural heritage."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Sun K.:</strong> "Neighborhood temple walks with local guides share spiritual culture."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Ji-Woo L.:</strong> "Korean cooking classes teach family recipes and food philosophy."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Hae-Won C.:</strong> "Respectful integration into historic neighborhood with cultural sensitivity."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Hanok Heritage" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+                                 alt="Berlin creative warehouse with artist studios"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Kreuzberg Kunsthaus</h3>
+                            <p class="hostel-location">Berlin, Germany</p>
+                            <p class="hostel-description">Artist collective hostel hosting live music events, film festivals, and artist residency programs connecting travelers with Berlin's vibrant creative underground.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Creative</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Art</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(318 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Klaus M.:</strong> "Street art tours with Berlin's activist artists are eye-opening."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Petra S.:</strong> "Gallery space showcases neighborhood creative communities."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Jens K.:</strong> "Political history walks contextualize Berlin's transformation."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Katrin B.:</strong> "DIY spirit alive in every cultural program and collaboration."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Kreuzberg Kunsthaus" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&q=80"
+                                 alt="Amsterdam canal side community cycling hub"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Amsterdam Wheel House</h3>
+                            <p class="hostel-location">Amsterdam, Netherlands</p>
+                            <p class="hostel-description">Eco-mobility focused hostel promoting cycling culture with bike workshops, canal neighborhood tours, and partnerships with local environmental organizations.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Sustainable</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">89</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">87</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Sustainable</span>
+                                <span class="tag">Community</span>
+                                <span class="tag">Eco</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(356 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Johan V.:</strong> "Bike tours with locals reveal the real Amsterdam beyond tourists."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Sophie N.:</strong> "Coffee culture explained by neighborhood café owners."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Pieter D.:</strong> "Canal-side storytelling with residents shares neighborhood histories."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Anja H.:</strong> "LGBTQ+ inclusive spaces supported authentically and openly."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Amsterdam Wheel House" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop&q=80"
+                                 alt="Venice canal view from hostel with local artisan connections"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Gondolier's Guild</h3>
+                            <p class="hostel-location">Venice, Italy</p>
+                            <p class="hostel-description">Historic hostel preserving Venetian traditions with glass-blowing workshops, mask-making classes, and partnerships supporting traditional artisan communities.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Heritage</span>
+                                    <span class="score-value">97</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Craft</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Heritage</span>
+                                <span class="tag">Craft</span>
+                                <span class="tag">Cultural</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(324 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Marco V.:</strong> "Gondola heritage tours taught by families with generations of history."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Lucia M.:</strong> "Venetian cooking traditions shared through neighborhood workshops."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Giovanni N.:</strong> "Respect for flooding realities and community resilience."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Giulia C.:</strong> "Genuine integration into Venice's artistic and cultural traditions."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Gondolier's Guild" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1496309365403-18802e688806?w=600&h=400&fit=crop&q=80"
+                                 alt="Rio de Janeiro hostel with beach access and cultural programs"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Favela Vibes</h3>
+                            <p class="hostel-location">Rio de Janeiro, Brazil</p>
+                            <p class="hostel-description">Community-centered hostel in a vibrant neighborhood hosting capoeira workshops, samba dance circles, and tours supporting local cultural preservation projects.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Music</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Dance</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Social</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.7</span>
+                                        <span class="review-count">(299 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Lucia S.:</strong> "Favela tours with community guides share empowering local perspectives."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Bruno M.:</strong> "Samba workshops teach genuine rhythm from community musicians."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Fernanda C.:</strong> "Community development partnerships show hostel's commitment."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Ricardo O.:</strong> "Capoeira and arts programs support local youth education."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Favela Vibes" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop&q=80"
+                                 alt="Portland eco-conscious hostel with community garden"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Keep Portland Weird</h3>
+                            <p class="hostel-location">Portland, Oregon, USA</p>
+                            <p class="hostel-description">Quirky independent hostel with community gardens, artist studios, live music events, and strong connections to Portland's alternative culture.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Creative</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Sustainability</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Creative</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Community</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.6</span>
+                                        <span class="review-count">(287 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Max T.:</strong> "Indie music venue tours connect you with Portland's creative scene."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Riley P.:</strong> "Coffee roastery partnerships teach local brewing culture."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Alex C.:</strong> "Outdoor food cart tours reveal Portland's food innovation spirit."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Jordan L.:</strong> "DIY and local maker culture celebrated in every hostel program."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Keep Portland Weird" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1520631013117-67ccc9b56968?w=600&h=400&fit=crop&q=80"
+                                 alt="Buenos Aires bookshop-themed literary hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Borges Library House</h3>
+                            <p class="hostel-location">Buenos Aires, Argentina</p>
+                            <p class="hostel-description">Literary-themed hostel celebrating Argentine writers with book clubs, poetry readings, and guided tours of famous writers' neighborhoods.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Educational</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">90</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">87</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Educational</span>
+                                <span class="tag">Literary</span>
+                                <span class="tag">Cultural</span>
+                            </div>
+                            <div class="hostel-reviews-section">
+                                <div class="reviews-header">
+                                    <span class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-number">4.8</span>
+                                        <span class="review-count">(352 reviews)</span>
+                                    </span>
+                                    <button class="toggle-reviews-btn" aria-expanded="false" aria-label="Show more reviews">
+                                        <span class="chevron">▼</span>
+                                    </button>
+                                </div>
+                                <div class="reviews-preview">
+                                    <div class="review-item">
+                                        <p><strong>Alejandra M.:</strong> "Literary heritage tours connect you to Argentina's intellectual traditions."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Carlos F.:</strong> "Tango history workshops contextualize dance's cultural significance."</p>
+                                    </div>
+                                </div>
+                                <div class="reviews-expanded hidden">
+                                    <div class="review-item">
+                                        <p><strong>Sofia V.:</strong> "Bookish community gatherings with local authors and readers."</p>
+                                    </div>
+                                    <div class="review-item">
+                                        <p><strong>Juan D.:</strong> "Neighborhood walking tours reveal Buenos Aires literary landmarks."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hostel-card-actions">
+                                <button class="btn btn-secondary book-now-btn" data-hostel="Borges Library House" data-city="Coming Soon">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-cta">
+                    <a href="#explore-map" class="btn btn-primary">Explore All Hostels</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== INTERACTIVE MAP ===================== -->
+        <section class="hostel-map" id="explore-map" aria-labelledby="map-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Explore the World</span>
+                    <h2 id="map-heading" class="section-title">Find Community Hostels<br><span class="text-accent">Around the Globe</span></h2>
+                    <p class="section-subtitle">Click any marker to discover community hostels in that city. Zoom in to explore neighborhoods, or use the filters to find your perfect match.</p>
+                </div>
+
+                <div class="map-controls">
+                    <div class="map-filter-group">
+                        <button class="map-filter-btn active" data-filter="all">All Hostels</button>
+                        <button class="map-filter-btn" data-filter="tier-a">Tier A</button>
+                        <button class="map-filter-btn" data-filter="tier-b">Tier B</button>
+                        <button class="map-filter-btn" data-filter="tier-c">Tier C</button>
+                    </div>
+                    <div class="map-region-group">
+                        <button class="map-region-btn active" data-region="world">World</button>
+                        <button class="map-region-btn" data-region="americas">Americas</button>
+                        <button class="map-region-btn" data-region="europe">Europe</button>
+                        <button class="map-region-btn" data-region="asia">Asia</button>
+                        <button class="map-region-btn" data-region="africa">Africa</button>
+                    </div>
+                </div>
+
+                <div class="map-wrapper">
+                    <div id="hostel-map" aria-label="Interactive map showing community hostel locations worldwide"></div>
+                    <div class="map-stats-bar">
+                        <span class="map-stat"><strong id="visible-count">30</strong> hostels shown</span>
+                        <span class="map-stat"><strong>27</strong> cities</span>
+                        <span class="map-stat"><strong>6</strong> continents</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== WHY IT MATTERS ===================== -->
+        <section class="why-it-matters" aria-labelledby="why-matters-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">The Community Impact</span>
+                    <h2 id="why-matters-heading" class="section-title">Why Community<br><span class="text-accent">Hostels Matter</span></h2>
+                    <p class="section-subtitle">When travelers choose community hostels, they create real impact — for neighborhoods, local economies, and their own understanding of the world.</p>
+                </div>
+
+                <div class="impact-grid">
+                    <div class="impact-card reveal">
+                        <div class="impact-icon">💰</div>
+                        <h3>Revenue Stays Local</h3>
+                        <p>Community hostels are locally owned. Your booking supports neighborhood families, not corporate shareholders. Money stays in the community.</p>
+                        <p class="impact-stat">100% of profits go directly to local owners and staff.</p>
+                    </div>
+
+                    <div class="impact-card reveal">
+                        <div class="impact-icon">🤝</div>
+                        <h3>Real Local Jobs</h3>
+                        <p>Community hostels employ locals meaningfully — as managers, hosts, and cultural guides. Not just housekeeping, but leadership roles.</p>
+                        <p class="impact-stat">Average 8-12 local staff per hostel</p>
+                    </div>
+
+                    <div class="impact-card reveal">
+                        <div class="impact-icon">🎨</div>
+                        <h3>Support Local Creators</h3>
+                        <p>Community hostels partner with local artists, musicians, chefs, and makers. Hosting their work, paying them fairly, and giving them a platform.</p>
+                        <p class="impact-stat">50+ local creators partnered per city</p>
+                    </div>
+
+                    <div class="impact-card reveal">
+                        <div class="impact-icon">🌍</div>
+                        <h3>Cultural Preservation</h3>
+                        <p>By choosing cultural hostels, travelers help preserve authentic neighborhoods. Less gentrification pressure, more respect for local traditions and values.</p>
+                        <p class="impact-stat">Neighborhoods with cultural tourism grow 3x slower than commercialized areas</p>
+                    </div>
+
+                    <div class="impact-card reveal">
+                        <div class="impact-icon">📖</div>
+                        <h3>Real Learning</h3>
+                        <p>Community hostels create meaningful exchange. Travelers don't just consume culture — they learn, question assumptions, and build empathy.</p>
+                        <p class="impact-stat">85% of travelers report deeper cultural understanding</p>
+                    </div>
+
+                    <div class="impact-card reveal">
+                        <div class="impact-icon">🌱</div>
+                        <h3>Sustainable Growth</h3>
+                        <p>Community-first tourism doesn't exhaust neighborhoods. It builds slowly, respects capacity, and thinks long-term about what communities can sustain.</p>
+                        <p class="impact-stat">Average 1-2 new community hostels per city annually</p>
+                    </div>
+                </div>
+
+                <div class="impact-message reveal">
+                    <p><strong>When you choose a community hostel, you're not just booking a bed.</strong> You're investing in neighborhoods, supporting local creators, preserving culture, and becoming part of real community exchange. Your choice matters.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- ===================== TRAVELER STORIES ===================== -->
         <section class="stories" aria-labelledby="stories-heading">
             <div class="container">
@@ -1297,7 +3493,7 @@
                             <span class="faq-icon" aria-hidden="true"></span>
                         </summary>
                         <div class="faq-answer">
-                            <p>A community hostel is a locally owned accommodation that goes beyond just providing a bed. It's embedded in its neighborhood, employs local staff, hosts cultural programming like cooking nights, music sessions, and walking tours, and creates authentic connections between travelers and local culture. Unlike standard hostels that optimize for price or party, community hostels optimize for local experience, community, and belonging.</p>
+                            <p><dfn>A community hostel</dfn> is a locally owned accommodation that goes beyond just providing a bed. It's embedded in its neighborhood, employs local staff, hosts cultural programming like cooking nights, music sessions, and walking tours, and creates authentic connections between travelers and local culture. Unlike standard hostels that optimize for price or party, community hostels optimize for local experience, community, and belonging.</p>
                         </div>
                     </details>
 
@@ -1337,7 +3533,7 @@
                             <span class="faq-icon" aria-hidden="true"></span>
                         </summary>
                         <div class="faq-answer">
-                            <p>Community rituals are regularly scheduled cultural activities hosted by community hostels. Examples include Sunday family meals where travelers cook with locals, tea ceremony nights, rooftop salsa jams, language exchange circles, neighborhood walking tours led by residents, maker workshops with local artisans, and live music nights featuring local musicians. These rituals transform a hostel stay into a cultural experience.</p>
+                            <p><dfn>Community rituals</dfn> are regularly scheduled cultural activities hosted by community hostels. Examples include Sunday family meals where travelers cook with locals, tea ceremony nights, rooftop salsa jams, language exchange circles, neighborhood walking tours led by residents, maker workshops with local artisans, and live music nights featuring local musicians. These rituals transform a hostel stay into a cultural experience.</p>
                         </div>
                     </details>
 
@@ -1431,7 +3627,7 @@
                     <div class="newsletter-content">
                         <h2 id="newsletter-heading">Travel Through Community</h2>
                         <p>Be the first to discover new community hostels, cultural rituals, and neighborhood guides. Join travelers who believe the best way to see the world is through the people who live there.</p>
-                        <form class="newsletter-form" action="coming-soon.html" method="get" aria-label="Newsletter signup">
+                        <form class="newsletter-form" action="#" method="get" aria-label="Newsletter signup">
                             <div class="newsletter-input-group">
                                 <label for="newsletter-email" class="sr-only">Email address</label>
                                 <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required autocomplete="email">
@@ -1466,11 +3662,11 @@
                 <div class="footer-links-group">
                     <h3>Explore</h3>
                     <ul>
-                        <li><a href="coming-soon.html">All Cities</a></li>
-                        <li><a href="coming-soon.html">Neighborhoods</a></li>
-                        <li><a href="coming-soon.html">Cultural Experiences</a></li>
-                        <li><a href="coming-soon.html">Community Rituals</a></li>
-                        <li><a href="coming-soon.html">Collections</a></li>
+                        <li><a href="#cities-heading">All Cities</a></li>
+                        <li><a href="#neighborhoods-heading">Neighborhoods</a></li>
+                        <li><a href="#rituals-heading">Cultural Experiences</a></li>
+                        <li><a href="#rituals-heading">Community Rituals</a></li>
+                        <li><a href="#collections-heading">Collections</a></li>
                     </ul>
                 </div>
 
@@ -1489,11 +3685,11 @@
                 <div class="footer-links-group">
                     <h3>Company</h3>
                     <ul>
-                        <li><a href="coming-soon.html">About Us</a></li>
-                        <li><a href="coming-soon.html">Our Methodology</a></li>
-                        <li><a href="coming-soon.html">Stories</a></li>
-                        <li><a href="coming-soon.html">Rankings</a></li>
-                        <li><a href="coming-soon.html">Contact</a></li>
+                        <li><a href="#why-matters-heading">About Us</a></li>
+                        <li><a href="#scoring-heading">Our Methodology</a></li>
+                        <li><a href="#stories-heading">Stories</a></li>
+                        <li><a href="#verification-heading">Rankings</a></li>
+                        <li><a href="#newsletter-heading">Contact</a></li>
                     </ul>
                 </div>
 
@@ -1513,9 +3709,11 @@
                 <p class="footer-philosophy">Culture-first. Community-run. Social by design.</p>
             </div>
         </div>
+        <a href="#site-header" class="back-to-top" aria-label="Back to top">↑ Back to Top</a>
     </footer>
 
     <!-- JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="js/main.js"></script>
 </body>
 </html>
