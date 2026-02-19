@@ -52,6 +52,32 @@
         });
     }
 
+    /* ===================== ACTIVE NAV LINK TRACKING ===================== */
+    var sections = document.querySelectorAll('section[id], section[aria-labelledby]');
+    var allNavAnchors = document.querySelectorAll('.nav-links a[href^="#"], .mobile-menu-links a[href^="#"]');
+
+    if (sections.length && allNavAnchors.length) {
+        var navObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var id = entry.target.id || entry.target.getAttribute('aria-labelledby');
+                    allNavAnchors.forEach(function (link) {
+                        var href = link.getAttribute('href');
+                        if (href === '#' + id) {
+                            link.classList.add('nav-active');
+                        } else {
+                            link.classList.remove('nav-active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+
+        sections.forEach(function (section) {
+            navObserver.observe(section);
+        });
+    }
+
     /* ===================== SCROLL REVEAL ANIMATIONS ===================== */
     var revealElements = document.querySelectorAll('.reveal');
 
