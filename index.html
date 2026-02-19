@@ -190,7 +190,7 @@
         "@type": "ItemList",
         "name": "Featured Community Hostel Cities",
         "description": "Top cities worldwide for community-driven hostel experiences",
-        "numberOfItems": 12,
+        "numberOfItems": 21,
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Mexico City", "url": "https://communityhostels.com/cities/mexico-city/"},
             {"@type": "ListItem", "position": 2, "name": "Medellín", "url": "https://communityhostels.com/cities/medellin/"},
@@ -203,7 +203,16 @@
             {"@type": "ListItem", "position": 9, "name": "Nairobi", "url": "https://communityhostels.com/cities/nairobi/"},
             {"@type": "ListItem", "position": 10, "name": "Bangkok", "url": "https://communityhostels.com/cities/bangkok/"},
             {"@type": "ListItem", "position": 11, "name": "Tokyo", "url": "https://communityhostels.com/cities/tokyo/"},
-            {"@type": "ListItem", "position": 12, "name": "Hanoi", "url": "https://communityhostels.com/cities/hanoi/"}
+            {"@type": "ListItem", "position": 12, "name": "Hanoi", "url": "https://communityhostels.com/cities/hanoi/"},
+            {"@type": "ListItem", "position": 13, "name": "Buenos Aires", "url": "https://communityhostels.com/cities/buenos-aires/"},
+            {"@type": "ListItem", "position": 14, "name": "Chiang Mai", "url": "https://communityhostels.com/cities/chiang-mai/"},
+            {"@type": "ListItem", "position": 15, "name": "Istanbul", "url": "https://communityhostels.com/cities/istanbul/"},
+            {"@type": "ListItem", "position": 16, "name": "Kraków", "url": "https://communityhostels.com/cities/krakow/"},
+            {"@type": "ListItem", "position": 17, "name": "Bali", "url": "https://communityhostels.com/cities/bali/"},
+            {"@type": "ListItem", "position": 18, "name": "Granada", "url": "https://communityhostels.com/cities/granada/"},
+            {"@type": "ListItem", "position": 19, "name": "Siem Reap", "url": "https://communityhostels.com/cities/siem-reap/"},
+            {"@type": "ListItem", "position": 20, "name": "Marrakech", "url": "https://communityhostels.com/cities/marrakech/"},
+            {"@type": "ListItem", "position": 21, "name": "Zanzibar", "url": "https://communityhostels.com/cities/zanzibar/"}
         ]
     }
     </script>
@@ -390,7 +399,12 @@
                     <p class="section-subtitle">We launch in 12 cities known for strong local culture and vibrant backpacker communities. Each city features 5-25 verified community hostels.</p>
                 </div>
 
-                <div class="cities-grid">
+                <div class="cities-search-bar">
+                    <input type="text" id="city-search" class="city-search-input" placeholder="Search cities by name or region..." aria-label="Search community hostels by city name or region">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                </div>
+
+                <div class="cities-grid" id="cities-grid">
                     <a href="coming-soon.html" class="city-card city-card-featured reveal" aria-label="Explore community hostels in Mexico City">
                         <img src="https://images.unsplash.com/photo-1518659526054-190340b32735?w=800&h=600&fit=crop&q=80"
                              alt="Colorful buildings and street art in a Mexico City neighborhood"
@@ -522,10 +536,209 @@
                             <p class="city-card-tagline">Phở, lakes & French-colonial charm</p>
                         </div>
                     </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Buenos Aires">
+                        <img src="https://images.unsplash.com/photo-1553531889-e6cf91d7eaa5?w=600&h=450&fit=crop&q=80"
+                             alt="Colorful buildings and tango dancers in Buenos Aires"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Latin America</span>
+                            <h3 class="city-card-name">Buenos Aires</h3>
+                            <p class="city-card-tagline">Tango, café culture & literary soul</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Chiang Mai">
+                        <img src="https://images.unsplash.com/photo-1552465881-721a86b56409?w=600&h=450&fit=crop&q=80"
+                             alt="Ancient temples and misty mountains surrounding Chiang Mai"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Asia</span>
+                            <h3 class="city-card-name">Chiang Mai</h3>
+                            <p class="city-card-tagline">Temples, night markets & mountain culture</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Istanbul">
+                        <img src="https://images.unsplash.com/photo-1524521827383-63ae8b8a39d3?w=600&h=450&fit=crop&q=80"
+                             alt="Blue mosque and Bosphorus straits with ferry boats"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Middle East & Europe</span>
+                            <h3 class="city-card-name">Istanbul</h3>
+                            <p class="city-card-tagline">Bazaars, tea culture & two continents</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Krakow">
+                        <img src="https://images.unsplash.com/photo-1519770749489-1b8d5a5f5c3d?w=600&h=450&fit=crop&q=80"
+                             alt="Historic old town square and church towers in Krakow"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Europe</span>
+                            <h3 class="city-card-name">Kraków</h3>
+                            <p class="city-card-tagline">History, pierogi & artistic heritage</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Bali">
+                        <img src="https://images.unsplash.com/photo-1489749798305-4fea3ba63d60?w=600&h=450&fit=crop&q=80"
+                             alt="Lush rice terraces and Hindu temples in Bali"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Asia</span>
+                            <h3 class="city-card-name">Bali</h3>
+                            <p class="city-card-tagline">Temples, yoga & rice paddy villages</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Granada">
+                        <img src="https://images.unsplash.com/photo-1580866343320-2d2e4ed84ebf?w=600&h=450&fit=crop&q=80"
+                             alt="Alhambra palace overlooking white-washed neighborhoods"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Europe</span>
+                            <h3 class="city-card-name">Granada</h3>
+                            <p class="city-card-tagline">Alhambra, Moorish culture & tapas</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Siem Reap">
+                        <img src="https://images.unsplash.com/photo-1557599810-88f7b68e9a97?w=600&h=450&fit=crop&q=80"
+                             alt="Ancient temple ruins and jungle canopy in Siem Reap"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Asia</span>
+                            <h3 class="city-card-name">Siem Reap</h3>
+                            <p class="city-card-tagline">Angkor temples & Khmer heritage</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Marrakech">
+                        <img src="https://images.unsplash.com/photo-1597521975876-1b5c28dfd7c7?w=600&h=450&fit=crop&q=80"
+                             alt="Colorful medina market stalls and traditional architecture"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Africa</span>
+                            <h3 class="city-card-name">Marrakech</h3>
+                            <p class="city-card-tagline">Medinas, souks & Sahara gateway</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Valparaíso">
+                        <img src="https://images.unsplash.com/photo-1577386411063-05c7c41f5ad9?w=600&h=450&fit=crop&q=80"
+                             alt="Colorful hillside houses and street art in Valparaíso"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Latin America</span>
+                            <h3 class="city-card-name">Valparaíso</h3>
+                            <p class="city-card-tagline">Bohemian street art & Pacific views</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="city-card reveal" aria-label="Explore community hostels in Zanzibar">
+                        <img src="https://images.unsplash.com/photo-1516912481808-846ec9b29ffd?w=600&h=450&fit=crop&q=80"
+                             alt="Turquoise waters and pristine beaches of Zanzibar"
+                             loading="lazy" width="600" height="450">
+                        <div class="city-card-overlay">
+                            <span class="city-card-region">Africa</span>
+                            <h3 class="city-card-name">Zanzibar</h3>
+                            <p class="city-card-tagline">Spice islands & Swahili culture</p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="section-cta">
                     <a href="coming-soon.html" class="btn btn-primary">View All Cities</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== NEIGHBORHOOD GUIDES ===================== -->
+        <section class="neighborhood-guides" aria-labelledby="neighborhoods-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Explore by Neighborhood</span>
+                    <h2 id="neighborhoods-heading" class="section-title">Every Neighborhood<br><span class="text-accent">Has a Story</span></h2>
+                    <p class="section-subtitle">Detailed guides to the neighborhoods where community hostels thrive. Learn the food, culture, norms, and hidden gems before you arrive.</p>
+                </div>
+
+                <div class="neighborhoods-grid">
+                    <a href="coming-soon.html" class="neighborhood-card reveal">
+                        <img src="https://images.unsplash.com/photo-1569163139394-de4798aa62b3?w=600&h=400&fit=crop&q=80"
+                             alt="Vibrant street art and colorful buildings in a bohemian neighborhood"
+                             loading="lazy" width="600" height="400">
+                        <div class="neighborhood-card-content">
+                            <h3>La Roma, Mexico City</h3>
+                            <p>Hipster hub with galleries, coffee roasteries, and street tacos. Walkable, artistic, young vibe.</p>
+                            <span class="neighborhood-tag">Artsy</span>
+                            <span class="neighborhood-tag">Walkable</span>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="neighborhood-card reveal">
+                        <img src="https://images.unsplash.com/photo-1541417584391-e4b2626ef1c0?w=600&h=400&fit=crop&q=80"
+                             alt="Historic narrow streets and traditional architecture in a historic quarter"
+                             loading="lazy" width="600" height="400">
+                        <div class="neighborhood-card-content">
+                            <h3>Alfama, Lisbon</h3>
+                            <p>Ancient hilltop maze of fado bars, tiled facades, and local eateries. Steep but magical.</p>
+                            <span class="neighborhood-tag">Historic</span>
+                            <span class="neighborhood-tag">Music Scene</span>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="neighborhood-card reveal">
+                        <img src="https://images.unsplash.com/photo-1500595046891-09ba2ddf7c70?w=600&h=400&fit=crop&q=80"
+                             alt="Bustling market stalls and street food vendors in a traditional quarter"
+                             loading="lazy" width="600" height="400">
+                        <div class="neighborhood-card-content">
+                            <h3>Old City, Bangkok</h3>
+                            <p>Chaotic temple district with canal life, street food, and temple bells. Sensory overload in the best way.</p>
+                            <span class="neighborhood-tag">Food Scene</span>
+                            <span class="neighborhood-tag">Spiritual</span>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="neighborhood-card reveal">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&q=80"
+                             alt="Colorful colonial buildings and outdoor plazas in a historic neighborhood"
+                             loading="lazy" width="600" height="400">
+                        <div class="neighborhood-card-content">
+                            <h3>San Blas, Cusco</h3>
+                            <p>Artisan quarter with handmade crafts, steep cobblestones, and mountain views. Authentic and walkable.</p>
+                            <span class="neighborhood-tag">Artisan</span>
+                            <span class="neighborhood-tag">Cultural</span>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="neighborhood-card reveal">
+                        <img src="https://images.unsplash.com/photo-1527004760902-806ba28cc9ec?w=600&h=400&fit=crop&q=80"
+                             alt="Contemporary street with boutiques, cafés and pedestrian walkways"
+                             loading="lazy" width="600" height="400">
+                        <div class="neighborhood-card-content">
+                            <h3>Gran Vía, Barcelona</h3>
+                            <p>Dynamic avenue of gaudí architecture, design shops, and cosmopolitan café culture. Energetic and connected.</p>
+                            <span class="neighborhood-tag">Modern</span>
+                            <span class="neighborhood-tag">Design</span>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="neighborhood-card reveal">
+                        <img src="https://images.unsplash.com/photo-1493970196280-d43daf0c965d?w=600&h=400&fit=crop&q=80"
+                             alt="Traditional market with lanterns and local shops"
+                             loading="lazy" width="600" height="400">
+                        <div class="neighborhood-card-content">
+                            <h3>Medina, Marrakech</h3>
+                            <p>Labyrinthine souks, call to prayer echoing through narrow streets, spice-scented air. Immersive sensory experience.</p>
+                            <span class="neighborhood-tag">Traditional</span>
+                            <span class="neighborhood-tag">Markets</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="section-cta">
+                    <a href="coming-soon.html" class="btn btn-primary">Explore All Neighborhoods</a>
                 </div>
             </div>
         </section>
@@ -615,6 +828,71 @@
                             <span class="ritual-icon" aria-hidden="true">🎨</span>
                             <h3>Maker Workshop</h3>
                             <p>Create something with local artisans — ceramics, textiles, prints, or jewelry. Take home a piece of the neighborhood.</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="ritual-card reveal">
+                        <div class="ritual-card-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=350&fit=crop&q=80"
+                                 alt="Film screening at a hostel with community members gathered"
+                                 loading="lazy" width="500" height="350">
+                        </div>
+                        <div class="ritual-card-body">
+                            <span class="ritual-icon" aria-hidden="true">🎬</span>
+                            <h3>Community Film Night</h3>
+                            <p>Watch films made by or about the local community. Followed by conversations with filmmakers and neighbors over refreshments.</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="ritual-card reveal">
+                        <div class="ritual-card-img">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=350&fit=crop&q=80"
+                                 alt="Street market tour with a local guide showing produce and vendors"
+                                 loading="lazy" width="500" height="350">
+                        </div>
+                        <div class="ritual-card-body">
+                            <span class="ritual-icon" aria-hidden="true">🛍️</span>
+                            <h3>Market & Street Food Tour</h3>
+                            <p>Explore neighborhood markets with a local guide. Learn food stories, haggling traditions, and taste street food from favorite vendors.</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="ritual-card reveal">
+                        <div class="ritual-card-img">
+                            <img src="https://images.unsplash.com/photo-1507842217343-583f20270319?w=500&h=350&fit=crop&q=80"
+                                 alt="Group yoga session in a peaceful garden space"
+                                 loading="lazy" width="500" height="350">
+                        </div>
+                        <div class="ritual-card-body">
+                            <span class="ritual-icon" aria-hidden="true">🧘</span>
+                            <h3>Wellness & Movement Circle</h3>
+                            <p>Yoga, tai chi, dance, or meditation led by locals. Connect with the neighborhood's movement culture and your own body.</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="ritual-card reveal">
+                        <div class="ritual-card-img">
+                            <img src="https://images.unsplash.com/photo-1523580580-d34f9ca1a00c?w=500&h=350&fit=crop&q=80"
+                                 alt="Open-mic poetry and storytelling event with audience"
+                                 loading="lazy" width="500" height="350">
+                        </div>
+                        <div class="ritual-card-body">
+                            <span class="ritual-icon" aria-hidden="true">🎤</span>
+                            <h3>Open Mic & Storytelling</h3>
+                            <p>Share your story or listen to local poets, writers, and musicians. A space where voices from the neighborhood and world come together.</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="ritual-card reveal">
+                        <div class="ritual-card-img">
+                            <img src="https://images.unsplash.com/photo-1456365174391-8fe5250193df?w=500&h=350&fit=crop&q=80"
+                                 alt="Book club discussion circle with participants"
+                                 loading="lazy" width="500" height="350">
+                        </div>
+                        <div class="ritual-card-body">
+                            <span class="ritual-icon" aria-hidden="true">📚</span>
+                            <h3>Book Club & Literature Circle</h3>
+                            <p>Read and discuss books by local authors or about local culture. Learn about the neighborhood's stories through the eyes of its writers.</p>
                         </div>
                     </a>
                 </div>
@@ -757,6 +1035,56 @@
                             <p>Sustainability meets community — permaculture, zero-waste kitchens, and green living.</p>
                         </div>
                     </a>
+
+                    <a href="coming-soon.html" class="collection-card reveal">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80"
+                             alt="Group of female travelers bonding at a hostel"
+                             loading="lazy" width="600" height="400">
+                        <div class="collection-card-content">
+                            <h3>Best Hostels for Women Travelers</h3>
+                            <p>Safe, welcoming spaces designed specifically for female travelers with women-only options.</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="collection-card reveal">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80"
+                             alt="LGBTQ+ travelers celebrating together at a pride event"
+                             loading="lazy" width="600" height="400">
+                        <div class="collection-card-content">
+                            <h3>Best LGBTQ+ Friendly Hostels</h3>
+                            <p>Inclusive, affirming spaces where all identities and orientations are celebrated and safe.</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="collection-card reveal">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd2628902d4a?w=600&h=400&fit=crop&q=80"
+                             alt="Volunteers working on a community project"
+                             loading="lazy" width="600" height="400">
+                        <div class="collection-card-content">
+                            <h3>Best for Volunteer & Service Travelers</h3>
+                            <p>Hostels partnered with ethical local organizations for meaningful volunteer experiences.</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="collection-card reveal">
+                        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&h=400&fit=crop&q=80"
+                             alt="Families with children enjoying a communal meal"
+                             loading="lazy" width="600" height="400">
+                        <div class="collection-card-content">
+                            <h3>Best Family-Friendly Hostels</h3>
+                            <p>Community spaces that welcome families with safe, connected neighborhoods and activities.</p>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="collection-card reveal">
+                        <img src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=600&h=400&fit=crop&q=80"
+                             alt="Seniors traveling together on a cultural tour"
+                             loading="lazy" width="600" height="400">
+                        <div class="collection-card-content">
+                            <h3>Best Hostels for Older Travelers</h3>
+                            <p>Accessible, quieter community hostels designed for mature travelers seeking connection.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -814,6 +1142,97 @@
                             <cite>— A solo traveler from Berlin, after 2 weeks in Oaxaca</cite>
                         </footer>
                     </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== TRAVELER STORIES ===================== -->
+        <section class="stories" aria-labelledby="stories-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Real Traveler Stories</span>
+                    <h2 id="stories-heading" class="section-title">How Community<br><span class="text-accent">Changed Their Travel</span></h2>
+                    <p class="section-subtitle">Stories from travelers who discovered that hostels can be so much more than a place to sleep.</p>
+                </div>
+
+                <div class="stories-grid">
+                    <div class="story-card reveal">
+                        <div class="story-header">
+                            <div class="story-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                            <div class="story-meta">
+                                <h3>Maya — Solo Traveler from Canada</h3>
+                                <p>3 weeks in Lisbon</p>
+                            </div>
+                        </div>
+                        <blockquote class="story-quote">
+                            <p>"I came to Lisbon feeling uncertain. By day three at the hostel, I had locals inviting me to their Sunday dinners. By week two, I was leading neighborhood walks for other guests. I didn't just see Lisbon — I became part of it."</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="story-card reveal">
+                        <div class="story-header">
+                            <div class="story-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                            <div class="story-meta">
+                                <h3>James & Sophie — Couple from UK</h3>
+                                <p>2 months across 4 cities</p>
+                            </div>
+                        </div>
+                        <blockquote class="story-quote">
+                            <p>"Every hostel felt like a home base, not just a pit stop. We learned to cook traditional dishes from locals, attended cultural events, and made friends we're still in touch with. This is how travel should be."</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="story-card reveal">
+                        <div class="story-header">
+                            <div class="story-avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                            <div class="story-meta">
+                                <h3>Priya — Digital Nomad from India</h3>
+                                <p>3 months in Bangkok</p>
+                            </div>
+                        </div>
+                        <blockquote class="story-quote">
+                            <p>"I found a community of other remote workers, but unlike typical digital nomad spaces, we were connected to the neighborhood. I practiced Thai with locals, worked from cafés the hostel recommended, and felt like a resident, not a tourist."</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="story-card reveal">
+                        <div class="story-header">
+                            <div class="story-avatar" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                            <div class="story-meta">
+                                <h3>Ahmed — Cultural Explorer from Egypt</h3>
+                                <p>6 days in Granada</p>
+                            </div>
+                        </div>
+                        <blockquote class="story-quote">
+                            <p>"The hostel connected me with local artists and historians. I learned more about Granada's layered history in conversations there than in any guidebook. The space made meaningful connections feel inevitable."</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="story-card reveal">
+                        <div class="story-header">
+                            <div class="story-avatar" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                            <div class="story-meta">
+                                <h3>Lin — Artist from Taiwan</h3>
+                                <p>10 days in Mexico City</p>
+                            </div>
+                        </div>
+                        <blockquote class="story-quote">
+                            <p>"I found a maker workshop at the hostel and ended up collaborating with local muralists. The experience wasn't just cultural — it was creatively inspiring. I left with new work and lasting friendships."</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="story-card reveal">
+                        <div class="story-header">
+                            <div class="story-avatar" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);"></div>
+                            <div class="story-meta">
+                                <h3>Marcus — First-Time Traveler from US</h3>
+                                <p>2 weeks in Cusco</p>
+                            </div>
+                        </div>
+                        <blockquote class="story-quote">
+                            <p>"I was nervous traveling solo for the first time. The hostel's community rituals made me feel welcomed immediately. I learned about Andean culture from locals, not just tourists. It was transformative."</p>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
         </section>

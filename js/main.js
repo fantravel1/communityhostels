@@ -141,6 +141,35 @@
         window.addEventListener('scroll', scrollHideHandler, { passive: true });
     }
 
+    /* ===================== CITY SEARCH FILTERING ===================== */
+    var citySearchInput = document.getElementById('city-search');
+    var citiesGrid = document.getElementById('cities-grid');
+
+    if (citySearchInput && citiesGrid) {
+        var cityCards = citiesGrid.querySelectorAll('.city-card');
+
+        citySearchInput.addEventListener('input', function () {
+            var searchTerm = this.value.toLowerCase().trim();
+
+            cityCards.forEach(function (card) {
+                var cityName = card.querySelector('.city-card-name');
+                var cityRegion = card.querySelector('.city-card-region');
+                var tagline = card.querySelector('.city-card-tagline');
+
+                var text = '';
+                if (cityName) text += cityName.textContent.toLowerCase();
+                if (cityRegion) text += ' ' + cityRegion.textContent.toLowerCase();
+                if (tagline) text += ' ' + tagline.textContent.toLowerCase();
+
+                if (searchTerm === '' || text.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
+
     /* ===================== NEWSLETTER FORM HANDLING ===================== */
     var forms = document.querySelectorAll('form');
     forms.forEach(function (form) {
