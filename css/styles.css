@@ -1317,6 +1317,124 @@ h1, h2, h3, h4 {
     border: 1px solid var(--color-border-light);
 }
 
+/* ===================== HOSTEL REVIEWS ===================== */
+.hostel-reviews-section {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--fs-sm);
+}
+
+.stars {
+    color: var(--color-accent);
+    font-size: var(--fs-sm);
+}
+
+.rating-number {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.review-count {
+    color: var(--color-text-muted);
+    font-size: var(--fs-xs);
+}
+
+.toggle-reviews-btn {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: var(--fs-sm);
+    padding: var(--space-xs);
+    cursor: pointer;
+    transition: transform var(--transition-base);
+}
+
+.toggle-reviews-btn:hover {
+    color: var(--color-text);
+}
+
+.toggle-reviews-btn.expanded .chevron {
+    transform: rotate(180deg);
+}
+
+.reviews-preview {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.review-item {
+    background: var(--color-bg-light);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--fs-xs);
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+.review-item p {
+    margin: 0;
+}
+
+.review-item strong {
+    color: var(--color-primary);
+}
+
+.reviews-expanded {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.reviews-expanded.hidden {
+    display: none;
+}
+
+/* ===================== HOSTEL ACTIONS ===================== */
+.hostel-card-actions {
+    margin-top: var(--space-lg);
+    display: flex;
+    gap: var(--space-md);
+}
+
+.book-now-btn {
+    flex: 1;
+    padding: var(--space-md) var(--space-lg);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.book-now-btn:hover {
+    background-color: #d84a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(224, 90, 43, 0.3);
+}
+
+.book-now-btn:active {
+    transform: translateY(0);
+}
+
 /* ===================== HOSTEL SEARCH ===================== */
 .hostels-search-bar {
     display: flex;
@@ -2489,6 +2607,135 @@ input:focus-visible,
 details summary:focus-visible {
     outline: 3px solid var(--color-primary);
     outline-offset: 3px;
+}
+
+/* ===================== BOOKING MODAL ===================== */
+.booking-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: var(--space-lg);
+    animation: fadeIn var(--transition-base);
+}
+
+.booking-modal.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.booking-modal-content {
+    background: var(--color-bg-card);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: color var(--transition-base);
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close-btn:hover {
+    color: var(--color-primary);
+}
+
+.modal-body h2 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--color-text);
+    font-size: var(--fs-xl);
+}
+
+#modal-hostel-info {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    font-size: var(--fs-sm);
+}
+
+.form-group {
+    margin-bottom: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+    color: var(--color-text);
+    font-size: var(--fs-sm);
+}
+
+.form-group input {
+    padding: var(--space-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-body);
+    font-size: var(--fs-sm);
+    color: var(--color-text);
+    background: var(--color-bg-light);
+    transition: border-color var(--transition-base);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(224, 90, 43, 0.1);
+}
+
+@media (max-width: 480px) {
+    .booking-modal {
+        padding: var(--space-md);
+    }
+
+    .booking-modal-content {
+        padding: var(--space-lg);
+    }
+
+    .modal-body h2 {
+        font-size: var(--fs-lg);
+    }
 }
 
 /* ===================== SELECTION ===================== */

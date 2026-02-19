@@ -271,4 +271,162 @@
             }
         });
     });
+
+    /* ===================== HOSTEL REVIEWS TOGGLE ===================== */
+    var toggleButtons = document.querySelectorAll('.toggle-reviews-btn');
+
+    toggleButtons.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var reviewsSection = btn.closest('.hostel-reviews-section');
+            if (!reviewsSection) return;
+
+            var expandedReviews = reviewsSection.querySelector('.reviews-expanded');
+            if (!expandedReviews) return;
+
+            var isExpanded = btn.classList.contains('expanded');
+
+            if (!isExpanded) {
+                expandedReviews.classList.remove('hidden');
+                btn.classList.add('expanded');
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                expandedReviews.classList.add('hidden');
+                btn.classList.remove('expanded');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    /* ===================== BOOKING MODAL ===================== */
+    // Create booking modal if it doesn't exist
+    if (!document.getElementById('booking-modal')) {
+        var bookingModal = document.createElement('div');
+        bookingModal.id = 'booking-modal';
+        bookingModal.className = 'booking-modal hidden';
+        bookingModal.innerHTML = '<div class="booking-modal-content">' +
+            '<button class="modal-close-btn" aria-label="Close booking modal">×</button>' +
+            '<div class="modal-body">' +
+            '<h2>Book Your Stay</h2>' +
+            '<p id="modal-hostel-info"></p>' +
+            '<form id="booking-form">' +
+            '<div class="form-group">' +
+            '<label for="check-in">Check-in Date:</label>' +
+            '<input type="date" id="check-in" name="checkIn" required>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<label for="check-out">Check-out Date:</label>' +
+            '<input type="date" id="check-out" name="checkOut" required>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<label for="guests">Number of Guests:</label>' +
+            '<input type="number" id="guests" name="guests" min="1" max="6" value="1" required>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<label for="booking-email">Email:</label>' +
+            '<input type="email" id="booking-email" name="email" placeholder="your@email.com" required>' +
+            '</div>' +
+            '<button type="submit" class="btn btn-primary" style="width: 100%;">Continue to Booking</button>' +
+            '</form>' +
+            '</div>' +
+            '</div>';
+
+        document.body.appendChild(bookingModal);
+    }
+
+    // Booking modal functionality
+    var bookingModal = document.getElementById('booking-modal');
+    var bookNowButtons = document.querySelectorAll('.book-now-btn');
+    var closeModalBtn = document.querySelector('.modal-close-btn');
+    var bookingForm = document.getElementById('booking-form');
+
+    bookNowButtons.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var hostelName = btn.getAttribute('data-hostel');
+            var city = btn.getAttribute('data-city');
+
+            var infoText = 'Booking ' + hostelName + ' in ' + city;
+            document.getElementById('modal-hostel-info').textContent = infoText;
+
+            // Set today as minimum check-in date
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById('check-in').min = today;
+            document.getElementById('check-out').min = today;
+
+            bookingModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', function () {
+            bookingModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Close modal when clicking outside
+    bookingModal.addEventListener('click', function (e) {
+        if (e.target === bookingModal) {
+            bookingModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Handle booking form submission
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var checkIn = document.getElementById('check-in').value;
+            var checkOut = document.getElementById('check-out').value;
+            var guests = document.getElementById('guests').value;
+            var email = document.getElementById('booking-email').value;
+            var hostelInfo = document.getElementById('modal-hostel-info').textContent;
+
+            if (new Date(checkOut) <= new Date(checkIn)) {
+                alert('Check-out date must be after check-in date');
+                return;
+            }
+
+            // Simulate booking submission
+            var submitBtn = bookingForm.querySelector('button[type="submit"]');
+            var originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+
+            setTimeout(function () {
+                submitBtn.textContent = 'Booking Confirmed!';
+                submitBtn.style.background = '#2d8a4e';
+
+                setTimeout(function () {
+                    alert('Thank you! A confirmation email has been sent to ' + email + '.\n\n' +
+                          hostelInfo + '\nGuests: ' + guests + '\nCheck-in: ' + checkIn + '\nCheck-out: ' + checkOut);
+
+                    // Reset form
+                    bookingForm.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+
+                    // Close modal
+                    bookingModal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 1000);
+            }, 1500);
+        });
+    }
+
+    // Keyboard shortcut to close modal (Escape key)
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !bookingModal.classList.contains('hidden')) {
+            bookingModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    });
 })();
