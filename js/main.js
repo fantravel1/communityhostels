@@ -170,11 +170,12 @@
         });
     }
 
-    /* ===================== HOSTEL FILTERING ===================== */
+    /* ===================== HOSTEL SEARCH & FILTERING ===================== */
+    var hostelSearchInput = document.getElementById('hostel-search');
     var hostelVibeFilter = document.getElementById('hostel-vibe-filter');
-    var hostelsGrid = document.getElementById('hostels-grid');
+    hostelsGrid = document.getElementById('hostels-grid');
 
-    if (hostelVibeFilter && hostelsGrid) {
+    if (hostelsGrid) {
         var hostelCards = hostelsGrid.querySelectorAll('.hostel-card');
 
         var vibeKeywords = {
@@ -185,34 +186,60 @@
             'sustainable': ['Eco', 'Sustainable', 'Fair Trade', 'Social Enterprise']
         };
 
-        hostelVibeFilter.addEventListener('change', function () {
-            var selectedVibe = this.value;
+        function updateHostelDisplay() {
+            var searchTerm = hostelSearchInput ? hostelSearchInput.value.toLowerCase().trim() : '';
+            var selectedVibe = hostelVibeFilter ? hostelVibeFilter.value : '';
 
             hostelCards.forEach(function (card) {
+                var hostelTitle = card.querySelector('.hostel-card-body h3');
+                var hostelLocation = card.querySelector('.hostel-location');
+                var hostelDescription = card.querySelector('.hostel-description');
                 var tags = card.querySelectorAll('.tag');
                 var cardTags = Array.from(tags).map(function (tag) {
                     return tag.textContent.trim();
                 });
 
-                var matches = false;
-                if (selectedVibe === '') {
-                    matches = true;
-                } else {
+                // Build searchable text
+                var text = '';
+                if (hostelTitle) text += hostelTitle.textContent.toLowerCase();
+                if (hostelLocation) text += ' ' + hostelLocation.textContent.toLowerCase();
+                if (hostelDescription) text += ' ' + hostelDescription.textContent.toLowerCase();
+                cardTags.forEach(function (tag) {
+                    text += ' ' + tag.toLowerCase();
+                });
+
+                // Check search match
+                var searchMatches = searchTerm === '' || text.includes(searchTerm);
+
+                // Check vibe filter match
+                var vibeMatches = true;
+                if (selectedVibe !== '') {
                     var keywords = vibeKeywords[selectedVibe] || [];
-                    matches = cardTags.some(function (tag) {
+                    vibeMatches = cardTags.some(function (tag) {
                         return keywords.some(function (keyword) {
                             return tag.toLowerCase().includes(keyword.toLowerCase());
                         });
                     });
                 }
 
-                if (matches) {
+                // Show card only if both search and vibe match
+                if (searchMatches && vibeMatches) {
                     card.classList.remove('hidden');
+                    card.style.display = '';
                 } else {
                     card.classList.add('hidden');
+                    card.style.display = 'none';
                 }
             });
-        });
+        }
+
+        if (hostelSearchInput) {
+            hostelSearchInput.addEventListener('input', updateHostelDisplay);
+        }
+
+        if (hostelVibeFilter) {
+            hostelVibeFilter.addEventListener('change', updateHostelDisplay);
+        }
     }
 
     /* ===================== NEWSLETTER FORM HANDLING ===================== */
