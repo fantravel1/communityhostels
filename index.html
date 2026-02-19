@@ -40,6 +40,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
+    <!-- Leaflet.js Map Library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -231,6 +234,7 @@
                 <li><a href="coming-soon.html">Experiences</a></li>
                 <li><a href="coming-soon.html">Collections</a></li>
                 <li><a href="coming-soon.html">Stories</a></li>
+                <li><a href="#explore-map">Map</a></li>
                 <li><a href="coming-soon.html">About</a></li>
             </ul>
             <div class="nav-actions">
@@ -3181,6 +3185,42 @@
             </div>
         </section>
 
+        <!-- ===================== INTERACTIVE MAP ===================== -->
+        <section class="hostel-map" id="explore-map" aria-labelledby="map-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Explore the World</span>
+                    <h2 id="map-heading" class="section-title">Find Community Hostels<br><span class="text-accent">Around the Globe</span></h2>
+                    <p class="section-subtitle">Click any marker to discover community hostels in that city. Zoom in to explore neighborhoods, or use the filters to find your perfect match.</p>
+                </div>
+
+                <div class="map-controls">
+                    <div class="map-filter-group">
+                        <button class="map-filter-btn active" data-filter="all">All Hostels</button>
+                        <button class="map-filter-btn" data-filter="tier-a">Tier A</button>
+                        <button class="map-filter-btn" data-filter="tier-b">Tier B</button>
+                        <button class="map-filter-btn" data-filter="tier-c">Tier C</button>
+                    </div>
+                    <div class="map-region-group">
+                        <button class="map-region-btn active" data-region="world">World</button>
+                        <button class="map-region-btn" data-region="americas">Americas</button>
+                        <button class="map-region-btn" data-region="europe">Europe</button>
+                        <button class="map-region-btn" data-region="asia">Asia</button>
+                        <button class="map-region-btn" data-region="africa">Africa</button>
+                    </div>
+                </div>
+
+                <div class="map-wrapper">
+                    <div id="hostel-map" aria-label="Interactive map showing community hostel locations worldwide"></div>
+                    <div class="map-stats-bar">
+                        <span class="map-stat"><strong id="visible-count">30</strong> hostels shown</span>
+                        <span class="map-stat"><strong>27</strong> cities</span>
+                        <span class="map-stat"><strong>6</strong> continents</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ===================== WHY IT MATTERS ===================== -->
         <section class="why-it-matters" aria-labelledby="why-matters-heading">
             <div class="container">
@@ -3610,6 +3650,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="js/main.js"></script>
 </body>
 </html>
