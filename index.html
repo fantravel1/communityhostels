@@ -1202,7 +1202,21 @@
                     <p class="section-subtitle">Examples of what community hostels on our platform look like. Each tells a story of local ownership, cultural programming, and real belonging.</p>
                 </div>
 
-                <div class="hostels-grid">
+                <div class="hostels-filter-bar">
+                    <div class="filter-group">
+                        <label for="hostel-vibe-filter">Filter by vibe:</label>
+                        <select id="hostel-vibe-filter" class="filter-select" aria-label="Filter hostels by vibe">
+                            <option value="">All Vibes</option>
+                            <option value="social">Social & Community</option>
+                            <option value="quiet">Quiet & Mindful</option>
+                            <option value="creative">Creative & Artistic</option>
+                            <option value="educational">Educational & Learning</option>
+                            <option value="sustainable">Eco & Sustainable</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="hostels-grid" id="hostels-grid">
                     <a href="coming-soon.html" class="hostel-card reveal">
                         <div class="hostel-card-img">
                             <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop&q=80"
@@ -1397,6 +1411,402 @@
                                 <span class="tag">Social Impact</span>
                                 <span class="tag">Inclusive</span>
                                 <span class="tag">Social</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop&q=80"
+                                 alt="Historic rooftop terrace with views in Istanbul hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Bosphorus Stories</h3>
+                            <p class="hostel-location">Istanbul, Turkey</p>
+                            <p class="hostel-description">Rooftop hostel bridging East and West with Turkish tea ceremonies, calling-to-prayer observation, and guided tours through bazaars.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Safety</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Spiritual</span>
+                                <span class="tag">Historic</span>
+                                <span class="tag">Social</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop&q=80"
+                                 alt="Colorful colonial architecture and courtyard in Granada hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Casa del Albaicín</h3>
+                            <p class="hostel-location">Granada, Spain</p>
+                            <p class="hostel-description">Moorish-influenced hostel with flamenco nights, cooking classes featuring local recipes, and deep connections to the historic neighborhood.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Food</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Inclusion</span>
+                                    <span class="score-value">89</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Music</span>
+                                <span class="tag">Food</span>
+                                <span class="tag">Historic</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&q=80"
+                                 alt="Beachfront community space at Zanzibar hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Spice Island Collective</h3>
+                            <p class="hostel-location">Zanzibar, Tanzania</p>
+                            <p class="hostel-description">Beachfront social enterprise supporting local artisans, hosting spice market tours and traditional Swahili cooking workshops daily.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Social Impact</span>
+                                    <span class="score-value">97</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Beach</span>
+                                <span class="tag">Food</span>
+                                <span class="tag">Social Impact</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop&q=80"
+                                 alt="Buenos Aires tango lounge at hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Milonga Casa</h3>
+                            <p class="hostel-location">Buenos Aires, Argentina</p>
+                            <p class="hostel-description">Tango-focused hostel with weekly milongas (dance halls), tango lessons from professional dancers, and literary café nights featuring local poets.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">98</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Social</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Dance</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Cultural</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80"
+                                 alt="Temple terrace learning space at Siem Reap hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Angkor Spirit Home</h3>
+                            <p class="hostel-location">Siem Reap, Cambodia</p>
+                            <p class="hostel-description">Ancient-temple-adjacent hostel offering Khmer language exchanges, sustainable tour partnerships, and skill-sharing circles with local guides.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Education</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">88</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Spiritual</span>
+                                <span class="tag">Educational</span>
+                                <span class="tag">Sustainable</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1566525885779-176a50487663?w=600&h=400&fit=crop&q=80"
+                                 alt="Rooftop gathering space at Tokyo traditional hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Matcha & Moon</h3>
+                            <p class="hostel-location">Tokyo, Japan</p>
+                            <p class="hostel-description">Zen-inspired hostel blending traditional and modern with tea ceremonies, calligraphy workshops, and neighborhood izakaya nights with locals.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Quiet Space</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">89</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Zen</span>
+                                <span class="tag">Cultural</span>
+                                <span class="tag">Quiet</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1535526066377-b5196e209d9d?w=600&h=400&fit=crop&q=80"
+                                 alt="Creative workspace at Bangkok digital nomad hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Backstreet Beats</h3>
+                            <p class="hostel-location">Bangkok, Thailand</p>
+                            <p class="hostel-description">Hip co-working hostel connecting digital nomads with local music scene, street food tours, and collaboration spaces with Thai creatives.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Digital</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">88</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Nomad</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80"
+                                 alt="Mountain valley views at Cusco cultural hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Pachamama Lodge</h3>
+                            <p class="hostel-location">Cusco, Peru</p>
+                            <p class="hostel-description">Indigenous-community-partnered hostel offering Quechua language learning, mountain rituals, and direct support for Andean weaving collectives.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Cultural Respect</span>
+                                    <span class="score-value">99</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Safety</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Indigenous</span>
+                                <span class="tag">Spiritual</span>
+                                <span class="tag">Fair Trade</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop&q=80"
+                                 alt="Lisbon neighborhood street art at Casa Lusitânia"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier B</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Casa Lusitânia</h3>
+                            <p class="hostel-location">Lisbon, Portugal</p>
+                            <p class="hostel-description">Artist collective hostel with street art tours, vintage market explorations, and direct connections to Lisbon's underground music and design scene.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">90</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Art Scene</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Art</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&h=400&fit=crop&q=80"
+                                 alt="Community learning space at Nairobi hostel"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Ubuntu House</h3>
+                            <p class="hostel-location">Nairobi, Kenya</p>
+                            <p class="hostel-description">Social enterprise hostel supporting local youth through tech workshops, mentoring circles, and partnerships with neighborhood organizations.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Social Impact</span>
+                                    <span class="score-value">97</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">95</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Education</span>
+                                    <span class="score-value">93</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Social Enterprise</span>
+                                <span class="tag">Educational</span>
+                                <span class="tag">Community</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop&q=80"
+                                 alt="Barcelona rooftop with Gaudí architecture views"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Modernista Collective</h3>
+                            <p class="hostel-location">Barcelona, Spain</p>
+                            <p class="hostel-description">Design-focused hostel celebrating Catalan architecture, hosting design talks, design studio partnerships, and neighborhood modernisme tours.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Design Culture</span>
+                                    <span class="score-value">96</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">89</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Design</span>
+                                <span class="tag">Architecture</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coming-soon.html" class="hostel-card reveal">
+                        <div class="hostel-card-img">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop&q=80"
+                                 alt="Eco-garden and sustainable learning space"
+                                 loading="lazy" width="600" height="400">
+                            <div class="hostel-badge">Tier A</div>
+                        </div>
+                        <div class="hostel-card-body">
+                            <h3>Cairo Conversations</h3>
+                            <p class="hostel-location">Cairo, Egypt</p>
+                            <p class="hostel-description">Heritage-focused hostel bridging ancient and modern Cairo with language circles, traditional crafts workshops, and neighborhood archaeology tours.</p>
+                            <div class="hostel-scores">
+                                <div class="mini-score">
+                                    <span class="score-label">Culture</span>
+                                    <span class="score-value">94</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Community</span>
+                                    <span class="score-value">91</span>
+                                </div>
+                                <div class="mini-score">
+                                    <span class="score-label">Inclusion</span>
+                                    <span class="score-value">92</span>
+                                </div>
+                            </div>
+                            <div class="hostel-tags">
+                                <span class="tag">Heritage</span>
+                                <span class="tag">Educational</span>
+                                <span class="tag">Cultural</span>
                             </div>
                         </div>
                     </a>

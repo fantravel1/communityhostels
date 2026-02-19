@@ -170,6 +170,51 @@
         });
     }
 
+    /* ===================== HOSTEL FILTERING ===================== */
+    var hostelVibeFilter = document.getElementById('hostel-vibe-filter');
+    var hostelsGrid = document.getElementById('hostels-grid');
+
+    if (hostelVibeFilter && hostelsGrid) {
+        var hostelCards = hostelsGrid.querySelectorAll('.hostel-card');
+
+        var vibeKeywords = {
+            'social': ['Social', 'Community', 'Music', 'Dance', 'Food', 'Social Impact'],
+            'quiet': ['Quiet', 'Zen', 'Spiritual', 'Mindful'],
+            'creative': ['Art', 'Creative', 'Design', 'Craft', 'Music'],
+            'educational': ['Educational', 'Learning', 'Spiritual', 'Fair Trade'],
+            'sustainable': ['Eco', 'Sustainable', 'Fair Trade', 'Social Enterprise']
+        };
+
+        hostelVibeFilter.addEventListener('change', function () {
+            var selectedVibe = this.value;
+
+            hostelCards.forEach(function (card) {
+                var tags = card.querySelectorAll('.tag');
+                var cardTags = Array.from(tags).map(function (tag) {
+                    return tag.textContent.trim();
+                });
+
+                var matches = false;
+                if (selectedVibe === '') {
+                    matches = true;
+                } else {
+                    var keywords = vibeKeywords[selectedVibe] || [];
+                    matches = cardTags.some(function (tag) {
+                        return keywords.some(function (keyword) {
+                            return tag.toLowerCase().includes(keyword.toLowerCase());
+                        });
+                    });
+                }
+
+                if (matches) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    }
+
     /* ===================== NEWSLETTER FORM HANDLING ===================== */
     var forms = document.querySelectorAll('form');
     forms.forEach(function (form) {
